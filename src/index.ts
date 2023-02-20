@@ -1,7 +1,7 @@
 export default function importmap() {
   return {
-    name: "vite-plugin-transform-index-html",
-    transformIndexHtml(html) {
+    name: "vite-plugin-importmap",
+    transformIndexHtml(html: string): string {
 
       // return html.replace(
       //   /<title>(.*?)<\/title>/,

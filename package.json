@@ -1,20 +1,41 @@
 {
   "name": "@ardaqs/vite-plugin-importmap",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A Vite plugin for replacing external importmap file name in index.html when bundling packages",
-  "main": "src/index.js",
+  "author": "Ardak Saduakassov",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["dist"],
+  "main": "./dist/vite-plugin-importmap.umd.cjs",
+  "module": "./dist/vite-plugin-importmap.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/vite-plugin-importmap.js",
+      "require": "./dist/vite-plugin-importmap.umd.cjs"
+    }
+  },
   "scripts": {
+    "build": "tsc && vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "vite-plugin-dts": "^2.0.0-beta.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ardaqs/vite-plugin-importmap.git"
   },
-  "keywords": ["vite", "plugin", "importmap"],
-  "author": "Ardak Saduakassov",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ardaqs/vite-plugin-importmap/issues"
   },
-  "homepage": "https://github.com/ardaqs/vite-plugin-importmap#readme"
+  "homepage": "https://github.com/ardaqs/vite-plugin-importmap#readme",
+  "keywords": ["vite", "plugin", "importmap"]
 }
